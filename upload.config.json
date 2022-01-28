@@ -1,0 +1,49 @@
+{
+  "plugin": {
+    "summary": {
+      "description": "Extracts EXIF metadata from images.",
+      "icon": "ImageExif"
+    },
+    "parameters": {
+      "schema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "Archive",
+        "type": "object"
+      },
+      "ui": {}
+    }
+  },
+  "templates": {
+    "extract": {
+      "summary": {
+        "name": "Extract image metadata",
+        "description": "Extracts the EXIF metadata from an image and returns it in the response.",
+        "category": "image",
+        "icon": "ImageExif",
+        "promoted": false
+      },
+      "transformation": {
+        "description": "Extracts the EXIF metadata from an image and returns it in the response.",
+        "scope": {
+          "mime": ["*"],
+          "tag": ["*"]
+        },
+        "slug": "metadata",
+        "steps": [
+          {
+            "plugin": {
+              "packageName": "upload-exif-plugin",
+              "packageVersion": "1.0.0"
+            },
+            "params": {}
+          }
+        ]
+      },
+      "transformationVariables": {
+        "schema": null,
+        "ui": null
+      }
+    }
+  }
+}

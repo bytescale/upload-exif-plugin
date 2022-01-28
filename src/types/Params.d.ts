@@ -1,0 +1,4 @@
+/**
+ * Archive
+ */
+export interface Params {}

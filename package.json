@@ -1,0 +1,79 @@
+{
+  "name": "upload-exif-plugin",
+  "version": "1.0.0",
+  "author": "Upload <hello@upload.io> (https://upload.io)",
+  "description": "Compress and decompress files on Upload.",
+  "license": "MIT",
+  "main": "dist/main.js",
+  "homepage": "https://github.com/upload-js/upload-exif-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upload-js/upload-exif-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/upload-js/upload-exif-plugin/issues"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "typecheck": "tsc --noEmit",
+    "prepack": "rm -rf dist && webpack",
+    "test": "jest --runInBand",
+    "generateSchema": "typescript-json-schema tsconfig.json Params --include 'src/types/*' --defaultNumberType integer --desctitles --required --strictNullChecks --refs true --noExtraProps"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*/**/*.{js,jsx,ts,tsx}": [
+      "eslint"
+    ],
+    "src/types/**/*.{ts,tsx}": [
+      "bash -c \"npm run generateSchema\""
+    ],
+    "*/**/*.{js,jsx,ts,tsx,test}": [
+      "bash -c \"npm run test\""
+    ],
+    "*/**/*.{ts,tsx}": [
+      "bash -c \"tsc --noEmit\""
+    ],
+    "*.{js,jsx,ts,tsx,json,css,html,md,yaml,yml}": [
+      "prettier -c"
+    ]
+  },
+  "dependencies": {
+    "bluebird": "3.7.2",
+    "exifr": "7.1.3",
+    "upload-plugin-sdk": "3.15.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.11.6",
+    "@babel/core": "7.11.6",
+    "@babel/preset-env": "7.11.5",
+    "@types/bluebird": "3.5.33",
+    "@types/jest": "26.0.15",
+    "@types/node": "14.14.10",
+    "@typescript-eslint/eslint-plugin": "4.8.1",
+    "@typescript-eslint/parser": "4.8.1",
+    "@upload-io/typescript-json-schema": "0.51.0",
+    "babel-loader": "8.2.1",
+    "eslint": "7.13.0",
+    "eslint-config-prettier": "6.15.0",
+    "eslint-config-standard-with-typescript": "19.0.1",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-return-types-object-literals": "1.0.1",
+    "eslint-plugin-standard": "4.1.0",
+    "husky": "4.3.0",
+    "jest": "26.6.3",
+    "lint-staged": "10.5.1",
+    "prettier": "2.1.2",
+    "ts-jest": "26.4.4",
+    "ts-loader": "8.0.11",
+    "typescript": "4.1.2",
+    "webpack": "5.5.1",
+    "webpack-cli": "4.2.0"
+  }
+}
