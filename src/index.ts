@@ -8,7 +8,10 @@ export default transform<Params>({
     const originalFilePath = resolve("/");
     try {
       const imageMetadata = await exifr.parse(originalFilePath, true);
-      const imageMetadataJson = JSON.stringify(imageMetadata);
+      const imageMetadataJson = JSON.stringify(imageMetadata, (k, value) => {
+        const isBuffer = Buffer.isBuffer(value) || ArrayBuffer.isView(value);
+        return isBuffer ? undefined : value;
+      });
       await fsAsync.writeFile(originalFilePath, imageMetadataJson);
     } catch (e) {
       throw new Error(`Unable to extract EXIF from image: ${(e as Error).message}`);
