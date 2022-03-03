@@ -1,6 +1,6 @@
 # Upload EXIF Plugin
 
-Extracts EXIF metadata from images for [Upload's Image API](https://upload.io/image-upload-api).
+Extracts EXIF metadata from images for Upload.io's [Image Upload API](https://upload.io/image-upload-api).
 
 To use this plugin use the following settings in a "Transformation Step" in the Upload Dashboard:
 
