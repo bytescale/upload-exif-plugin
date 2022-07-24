@@ -17,6 +17,9 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "typecheck": "tsc --noEmit",
     "prepack": "rm -rf dist && webpack",
+    "publish:executeIfReleaseCommit": "bash -c 'COMMIT=$(git log -1 --pretty=%B) && [ \"${COMMIT:0:8}\" != \"Release \" ] || npm run publish:execute'",
+    "publish:execute": "npm publish && npm run publish:createGitHubRelease",
+    "publish:createGitHubRelease": "gh release create v$(node -p \"require('./package.json').version\")",
     "test": "jest --runInBand",
     "generateSchema": "typescript-json-schema tsconfig.json Params --include 'src/types/*' --defaultNumberType integer --desctitles --required --strictNullChecks --refs true --noExtraProps"
   },
