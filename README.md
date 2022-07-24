@@ -6,7 +6,7 @@ To use this plugin use the following settings in a "Transformation Step" in the 
 
 | Plugin Name          | Plugin Version |
 | -------------------- | -------------- |
-| `upload-exif-plugin` | `1.2.2`        |
+| `upload-exif-plugin` | `1.2.4`        |
 
 ## License
 

@@ -1,6 +1,6 @@
 {
   "name": "upload-exif-plugin",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "author": "Upload <hello@upload.io> (https://upload.io)",
   "description": "Extracts EXIF metadata from images for Upload's Image API.",
   "license": "MIT",
