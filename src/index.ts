@@ -7,7 +7,7 @@ export default transform<Params>({
   run: async ({ resolve, setMetadata }) => {
     const originalFilePath = resolve("/");
     try {
-      const imageMetadata = await exifr.parse(originalFilePath, true);
+      const imageMetadata = await exifr.parse(originalFilePath, true as any);
       const imageMetadataJson = JSON.stringify(imageMetadata, (k, value) => {
         const isBuffer = Buffer.isBuffer(value) || ArrayBuffer.isView(value);
         return isBuffer ? undefined : value;
