@@ -8,10 +8,10 @@
   "homepage": "https://upload.io/image-upload-api",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/upload-js/upload-exif-plugin.git"
+    "url": "git+https://github.com/upload-io/upload-exif-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/upload-js/upload-exif-plugin/issues"
+    "url": "https://github.com/upload-io/upload-exif-plugin/issues"
   },
   "scripts": {
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
