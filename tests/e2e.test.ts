@@ -58,7 +58,7 @@ async function extractMetadata(filePath: string): Promise<string> {
 }
 
 async function beforeTest(): Promise<void> {
-  await fsAsync.rmdir(tmpDirRoot, { recursive: true });
+  await fsAsync.rm(tmpDirRoot, { recursive: true, force: true });
   await fsAsync.mkdir(tmpDirRoot, { recursive: true });
   await fsAsync.mkdir(tmpDir);
 }
