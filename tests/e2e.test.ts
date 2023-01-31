@@ -35,13 +35,8 @@ async function extractMetadata(filePath: string): Promise<string> {
           },
           params: {}
         }
-      ],
-      scope: {
-        mime: ["*"],
-        tag: ["*"]
-      }
-    },
-    queryParams: {}
+      ]
+    }
   };
   const paths = await makePaths(tmpDir, filePath, "text/plain");
   await plugin({
