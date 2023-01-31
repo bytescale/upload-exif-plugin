@@ -14,7 +14,7 @@
     "url": "https://github.com/upload-io/upload-exif-plugin/issues"
   },
   "files": [
-    "*",
+    "upload.config.json",
     "/dist/*"
   ],
   "scripts": {
