@@ -25,16 +25,12 @@
       },
       "transformation": {
         "description": "Extracts the EXIF metadata from an image and returns it in the response.",
-        "scope": {
-          "mime": ["*"],
-          "tag": ["*"]
-        },
         "slug": "metadata",
         "steps": [
           {
             "plugin": {
               "packageName": "upload-exif-plugin",
-              "packageVersion": "2.0.0"
+              "packageVersion": "2.1.0"
             },
             "params": {}
           }

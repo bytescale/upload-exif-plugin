@@ -1,6 +1,6 @@
 {
   "name": "upload-exif-plugin",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": "Upload <hello@upload.io> (https://upload.io)",
   "description": "Extracts EXIF metadata from images for Upload's Image API.",
   "license": "MIT",
@@ -46,13 +46,13 @@
       "bash -c \"tsc --noEmit\""
     ],
     "*.{js,jsx,ts,tsx,json,css,html,md,yaml,yml}": [
-      "prettier -c"
+      "prettier -w"
     ]
   },
   "dependencies": {
     "bluebird": "3.7.2",
     "exifr": "6.1.0",
-    "upload-plugin-sdk": "6.0.0"
+    "upload-plugin-sdk": "6.2.0"
   },
   "devDependencies": {
     "@babel/cli": "7.19.3",
