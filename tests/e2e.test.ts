@@ -20,6 +20,12 @@ describe("Extract EXIF from JPEG", () => {
 
 async function extractMetadata(filePath: string): Promise<string> {
   const transformation: Transformation = {
+    request: {
+      filePath: "/",
+      transformationSlug: "foo",
+      queryString: [],
+      accountId: "abc"
+    },
     type: "Transformation",
     definition: {
       transformationId: "exif",
