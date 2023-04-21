@@ -17,10 +17,10 @@
     "preserveSymlinks": true,
     "skipLibCheck": true,
     "outDir": "./dist",
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
-      "upload-exif-plugin": ["./"],
-      "upload-exif-plugin/*": ["./*"]
+      "upload-exif-plugin": ["./src"],
+      "upload-exif-plugin/*": ["./src/*"]
     }
   },
   "include": ["./**/*"],

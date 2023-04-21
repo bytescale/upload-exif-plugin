@@ -29,7 +29,10 @@ module.exports = {
             loader: "babel-loader" // Options are in 'babel.config.js'
           },
           {
-            loader: "ts-loader"
+            loader: "ts-loader",
+            options: {
+              configFile: "tsconfig.build.json"
+            }
           }
         ],
         include: [path.resolve(__dirname, "src")]

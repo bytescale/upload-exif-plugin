@@ -5,6 +5,7 @@
   "description": "Extracts EXIF metadata from images for Upload's Image API.",
   "license": "MIT",
   "main": "dist/main.js",
+  "types": "dist/index.d.ts",
   "homepage": "https://upload.io/image-upload-api",
   "repository": {
     "type": "git",
@@ -20,7 +21,7 @@
   "scripts": {
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "typecheck": "tsc --noEmit",
-    "prepack": "rm -rf dist && webpack",
+    "prepack": "rm -rf dist && webpack && tsc-alias",
     "publish:executeIfReleaseCommit": "bash -c 'COMMIT=$(git log -1 --pretty=%B) && [ \"${COMMIT:0:8}\" != \"Release \" ] || npm run publish:execute'",
     "publish:execute": "npm publish && npm run publish:createGitHubRelease",
     "publish:createGitHubRelease": "gh release create v$(node -p \"require('./package.json').version\")",
@@ -78,6 +79,7 @@
     "lint-staged": "10.5.1",
     "prettier": "2.1.2",
     "ts-jest": "26.4.4",
+    "tsc-alias": "1.2.10",
     "ts-loader": "9.2.2",
     "typescript": "4.4.4",
     "webpack": "5.75.0",
