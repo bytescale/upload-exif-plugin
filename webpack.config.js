@@ -1,6 +1,6 @@
 /* eslint @typescript-eslint/no-var-requires: 0 */
 const path = require("path");
-
+const nodeExternals = require("webpack-node-externals");
 const isProduction = false;
 
 module.exports = {
@@ -13,6 +13,7 @@ module.exports = {
   devtool: false,
   stats: "minimal",
   plugins: [],
+  externals: nodeExternals(),
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
     alias: {
